@@ -42,6 +42,14 @@ final class DefaultController extends AbstractController
         ]
     ];
 
+    #[Route('/default', name: 'app_default')]
+    public function index(): Response
+    {
+        return $this->render('default/index.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
     // création d'une autre méthode pour servir la page people
     #[Route('/people', name: 'app_default')]
     public function people(): Response
@@ -51,4 +59,5 @@ final class DefaultController extends AbstractController
         ]);
     }
 }
+
 ``` 
